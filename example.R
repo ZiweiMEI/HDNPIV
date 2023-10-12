@@ -89,9 +89,9 @@ g.deriv.plot.dta = cbind(g.deriv(d.seq),out$gderiv.init,out$gderiv.est,
                          out$gderiv.est - out$H.quantile*out$gderiv.sd,
                          out$gderiv.est + out$H.quantile*out$gderiv.sd) 
 
-pdf(file = "Example.pdf",   # The directory you want to save the file in
-    width = 7, # The width of the plot in inches
-    height = 6) # The height of the plot in inches
+
+
+png(file = "Example.png")  
  
 matplot(d.seq, g.deriv.plot.dta[,1:3], ylab = "g'(D)", xlab = "D",
         type = "l",
