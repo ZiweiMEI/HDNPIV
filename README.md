@@ -12,7 +12,7 @@ install.pacakges(c("splines","splines2","glmnet","MASS","igraph","matrixStats","
 In addition, users need to install the "Rmosek" package manually. The instructions for installation are available at  [Installation of MOSEK Rmosek package.](https://docs.mosek.com/latest/rmosek/install-interface.html)
 
 
-"Estimate_Functions.R" and "Inference_Functions.R" contain necessary R functions for Lasso estimators and projection vectors for bias correction.  
+"Estimate_Functions.R" and "Inference_Functions.R" contain necessary R functions for initial Lasso estimators, bias-correction estimators and a uniform confidence band for the marginal effect function.  
 
 "example.R" provides an example that is shown below.  
 
