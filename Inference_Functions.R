@@ -63,8 +63,7 @@ proj.debias <- function(B,H,X.mat,K.hat,B0,pz,lambda = NULL,lambda.X = NULL,kapp
     #   n.tuning = sample(1:n,px)
     #   lambda = (px/n)^(3/14) * find.lambda(B[n.tuning,],H[n.tuning,],X.mat[n.tuning,],K.hat[n.tuning,],B0,pz)
     # }
-    lambda = find.lambda(B,H,X.mat,K.hat,B0,pz)
-    print(c("lambda",lambda))
+    lambda = find.lambda(B,H,X.mat,K.hat,B0,pz) 
   }
   
   
@@ -118,9 +117,9 @@ proj.debias <- function(B,H,X.mat,K.hat,B0,pz,lambda = NULL,lambda.X = NULL,kapp
  
 }
 
-Inference.gfun <- function(Y,D,Z,X,gamma = 13/84, M = NULL, split = FALSE, 
+Inference.gfun <- function(Y,D,Z,X, M = 5, split = FALSE, 
                            sample.1.index = NULL, d.seq = NULL, Lasso_tuning = NULL,
-                           gfun = FALSE, sig.level = 0.05, NBB = 1e4, kappa0 = 1.2){
+                           sig.level = 0.05, NBB = 1e4, kappa0 = 1.2){
  
   D = as.matrix(D)
   Z = as.matrix(Z)
@@ -155,19 +154,10 @@ Inference.gfun <- function(Y,D,Z,X,gamma = 13/84, M = NULL, split = FALSE,
   n.a = length(sample.1)
   n.b = length(sample.2)
   
-  print(c("na",n.a))
-  print(c("nb",n.b))
+  # print(c("na",n.a))
+  # print(c("nb",n.b))
   
-  if (!is.null(gamma)){
-      print("M")
-      
-      M = max( ceiling((2*n)^gamma),5)  
-      
-      print(M)
-      print(n)
-  }
-  
-  # print(M)
+ 
   
   Y.a = as.matrix(Y[sample.1,])
   D.a = as.matrix(D[sample.1,])
@@ -241,7 +231,7 @@ Inference.gfun <- function(Y,D,Z,X,gamma = 13/84, M = NULL, split = FALSE,
   
   ehat.b = demean(e.hat[sample.2] + out.EqY$intercept)
   
-  print(c(mean( e.hat ),out.EqY$intercept,var.hat))
+  # print(c(mean( e.hat ),out.EqY$intercept,var.hat))
   
   BB = GenerateSplineMat(D, M = length(beta.hat) )$Spline2.list[[1]]
   Bd0 = t(predict(BB,d.seq)) 

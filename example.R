@@ -83,12 +83,19 @@ d.seq = seq(-1,3,4/999)
 
 ## Uniform inference
 out <- Inference.gfun(Y,D,Z,X,d.seq = d.seq, sig.level = 0.05)
+# Save the results 
+True.val <- g.deriv(d.seq)
+Initial.estimate <- out$gderiv.init
+Debiased.estimate <- out$gderiv.est
+Lower.confband <- out$gderiv.est - out$H.quantile*out$gderiv.sd
+Upper.confband <- out$gderiv.est + out$H.quantile*out$gderiv.sd
 
-## Plot the results
-g.deriv.plot.dta = cbind(g.deriv(d.seq),out$gderiv.init,out$gderiv.est,
-                         out$gderiv.est - out$H.quantile*out$gderiv.sd,
-                         out$gderiv.est + out$H.quantile*out$gderiv.sd) 
-
+## Plot the results 
+g.deriv.plot.dta = cbind(True.val,
+                         Initial.estimate,
+                         Debiased.estimate,
+                         Lower.confband,
+                         Upper.confband) 
 
 
 png(file = "Example.png")  
