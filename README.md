@@ -1,4 +1,4 @@
-# The Q Test 
+# Nonlinear Endogenous Effect with High-Dimensional Covariates 
 
 This is the github repo for the uniform inference for nonlinear endogenous effects with high-dimensional covariates using double bias correction by Fan et al. (2023).
 
@@ -139,4 +139,4 @@ dev.off()
 ```
 
 
- ![Image load failed](https://raw.github.com/ZiweiMEI/repositpry/master/HDNPIV/Example.pdf) 
+ ![Image load failed](https://github.com/ZiweiMEI/HDNPIV/Example.pdf) 
