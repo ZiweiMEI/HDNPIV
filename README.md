@@ -1,6 +1,8 @@
 # Nonlinear Endogenous Effect with High-Dimensional Covariates 
 
-This is the github repo for the uniform inference for nonlinear endogenous effects with high-dimensional covariates using double bias correction by Fan et al. (2023).
+This is the github repo for the uniform inference for nonlinear endogenous effects with high-dimensional covariates using double bias correction by the following paper: 
+
+Qingliang Fan, Zijian Guo, Ziwei Mei, Cun-Hui Zhang (2023): "[Uniform Inference for Nonlinear Endogenous Treatment Effects with High-Dimensional Covariates](http://arxiv.org/abs/2310.08063)".
 
 ## Required packages 
 
